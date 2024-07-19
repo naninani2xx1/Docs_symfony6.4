@@ -16,13 +16,13 @@
 ### Performance
 Để hiểu vấn đề này, hãy tưởng tượng thiết lập lý thuyết sau:
 
-##### assets/app.jsnhập khẩu./duck.js 
-##### assets/duck.jsnhập khẩubootstrap
+##### assets/app.js import ./duck.js 
+##### assets/duck.js import bootstrap
 Nếu không tải trước, khi trình duyệt tải trang xuống, điều sau đây sẽ xảy ra:
 
 Trình duyệt tải xuống assets/app.js;
-Sau đó nó sẽ thấy việc ./duck.jsnhập và tải xuống assets/duck.js;
-Sau đó nó sẽ xem xét bootstrapviệc nhập và tải xuống assets/bootstrap.js.
+Sau đó nó sẽ thấy việc ./duck.js import và tải xuống assets/duck.js;
+Sau đó nó sẽ xem xét bootstrap việc import và tải xuống assets/bootstrap.js.
 Thay vì tải xuống cả 3 tệp song song, trình duyệt sẽ buộc phải tải xuống từng tệp một khi phát hiện ra chúng. Điều đó sẽ làm giảm hiệu suất.
 
 AssetMapper tránh vấn đề này bằng cách xuất ra linkcác thẻ "tải trước". Logic hoạt động như sau:
